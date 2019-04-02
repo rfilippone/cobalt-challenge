@@ -28,7 +28,7 @@ import com.example.restauth.domain.UserService;
  * - POST to /users to create (register) a new user. The location header in case of HTTP CREATED response is the URI 
  *   of the created resource (access to the created reource, i.e. GET request to it, is not implemented)
  *   
- * - POST to /user/{username}/session to create and an authenticated "session" and abstract an authentication process as 
+ * - POST to /user/{username}/sessions to create and an authenticated "session" and abstract an authentication process as 
  *   a resource. The location header represents a unique identifier that can be used as an authenticated session identifier in
  *   the server side frontend part of an application
  * 
