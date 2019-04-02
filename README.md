@@ -37,7 +37,7 @@ The domain abstraction of the user repository is implemented in the infrastructu
 
 The autowiring functionality of spring is leveraged to inject services and concrete classes in the correct places.
 
-#Endpoints design
+# Endpoints design
 
 The following endpoints are implemented 
 
