@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Cobalt",
+		"_postman_id": "a40a1d8e-7d81-27cd-508a-f0b8524223dc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"url": "127.0.0.1:8080/users",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"abc\",\n  \"password\": \"dwdw\"\n}"
+				},
+				"description": "Create a user"
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate user",
+			"request": {
+				"url": "127.0.0.1:8080/user/abc/sessions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"dwdw\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate user failure",
+			"request": {
+				"url": "127.0.0.1:8080/user/abc/sessions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"qwe\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "reset password",
+			"request": {
+				"url": "127.0.0.1:8080/user/abc/password",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"oldPassword\": \"dwdw\",\n  \"newPassword\": \"newpwd\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate after password change",
+			"request": {
+				"url": "127.0.0.1:8080/user/abc/sessions",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\": \"newpwd\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
